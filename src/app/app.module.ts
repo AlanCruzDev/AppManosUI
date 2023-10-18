@@ -21,6 +21,8 @@ import { PerfilComponent } from './modulos/perfil/perfil.component';
 import { PostComponent } from './modulos/post/post.component';
 import { PostCrearComponent } from './componentes/post-crear/post-crear.component';
 import { PerfilCrearComponent } from './componentes/perfil-crear/perfil-crear.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,13 @@ import { PerfilCrearComponent } from './componentes/perfil-crear/perfil-crear.co
     ReactiveFormsModule,
     NgbModule,
     WebcamModule,
-    FormsModule
+    FormsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
