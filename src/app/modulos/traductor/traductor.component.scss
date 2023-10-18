@@ -1,0 +1,50 @@
+.wrapper {
+  position: relative;
+  height: 35vh;
+}
+.circulo{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #FF7332;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.circulo i{
+  font-size: 24px;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 50px; /* Ajusta la distancia del menú desde el círculo */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 50%;
+  transition: transform 0.3s ease;
+}
+
+.menu.show {
+  display: block;
+  transform: translateY(0);
+}
+.menu li {
+  list-style: none;
+  padding: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.show {
+  display: block;
+  transform: translateY(0);
+}

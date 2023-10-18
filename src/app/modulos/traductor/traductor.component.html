@@ -1,0 +1,28 @@
+<app-user-img (pictureTaken)="handleImage($event)"></app-user-img>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+        <form>
+          <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+      </form>
+    </div>
+  </div>
+  <div class="wrapper">
+    <div class="circulo" id="circle" (click)="toggleMenu()">
+      <i class="fa-solid fa-angles-left"></i>
+    </div>
+    <div class="menu" id="menu" [ngClass]="{ 'show': isMenuOpen }">
+      <ul>
+        <li (click)="accionMenu('voz')">Voz</li>
+        <li (click)="accionMenu('escritura')">Escritura</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<app-hablar-audio *ngIf="mostrarModal"
+  (cerrarModal)="cerrarModal()">
+</app-hablar-audio>

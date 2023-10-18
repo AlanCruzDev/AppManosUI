@@ -1,0 +1,45 @@
+.card_post {
+  width: 100%;
+  height: 20%;
+  background-color: white;
+}
+
+.card_post_header {
+  display: flex;
+  padding: 10px;
+}
+
+.card_post_header h4 {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.card_post_body {
+  width: 100%;
+}
+
+.card_post_header .titulo_p {
+  font-weight: bold;
+}
+
+.user_imagen {
+  width: 50px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid bisque;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+.input_perfil:focus{
+  outline: none;
+}

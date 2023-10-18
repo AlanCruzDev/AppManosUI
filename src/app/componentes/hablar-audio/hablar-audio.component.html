@@ -1,0 +1,27 @@
+<div class="modal-container window-form">
+  <div class="modal-content card">
+    <div class="card-header">
+      <button class="col-2 btn-nav" (click)="cerrar()"><i class="fa fa-times"></i></button>
+    </div>
+    <div class="card-body">
+      <div class="microfono">
+        <div class="microfono-icono" (click)="toggleGrabacion()">
+          <i [ngClass]="{'fas fa-microphone': !grabando, 'fas fa-stop': grabando}"></i>
+          <div class="grabando-animation" *ngIf="grabando"></div>
+        </div>
+          <h3 class="ml-4 mb-0" *ngIf="grabando">Escuchando...</h3>
+        <div class="microfono-opciones" [ngClass]="{'show': mostrarOpciones}">
+          <div class="opcion" (click)="terminarGrabacion()">Terminar</div>
+          <div class="opcion" (click)="cancelarGrabacion()">Cancelar</div>
+        </div>
+      </div>
+      <diV class="row mt-3" *ngIf="mostrarTexto">
+        <div class="col-12">
+            <div>
+              <textarea class="form-control" [(ngModel)]="mensajeVoz" id="mensajeVoz" name="mensajeVoz" rows="3"></textarea>
+            </div>
+        </div>
+      </diV>
+    </div>
+  </div>
+</div>

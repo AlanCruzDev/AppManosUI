@@ -1,0 +1,114 @@
+.modal-container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.window-form > div{
+  height: fit-content;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+}
+.modal-content{
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 30%;
+}
+/*Estilo de microfono*/
+
+.microfono {
+  position: relative;
+  display: inline-block;
+}
+
+.microfono-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4ac959;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+.microfono-opciones {
+  position: absolute;
+  bottom: 50px;
+  right: -100px;
+  width: 120px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.opcion {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.microfono:hover .microfono-opciones {
+  right: -100px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.show {
+  transform: translateY(-100%);
+}
+/*Efecto de grabacion*/
+.grabando-animation {
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  animation: pulsating 1s infinite;
+}
+
+@keyframes pulsating {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+/*Estilos para dispositivos Moviles*/
+@media(max-width:767.98px){
+  .modal-content.card{
+    padding: 10px;
+    width: 96%;
+  } 
+}
+/*Estilos para dispositivos de escritorio*/
+@media(min-width:992px){
+  .modal-content.card{
+    padding: 10px;
+    width: 30%;
+  } 
+}
+/*Estilos para dispositivos de tablet*/
+@media(min-width:768px) and (max-width:991.98px){
+  .modal-content.card{
+    padding: 15px;
+    width: 90%;
+  } 
+}
+

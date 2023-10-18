@@ -1,0 +1,19 @@
+<div class="container">
+	<div style="text-align:center">
+		<div class="wrapper" (window:resize)="onResize($event)">
+			<webcam [height]="height_web" [width]="width_web" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+			 [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions" (cameraSwitched)="cameraWasSwitched($event)"
+			 (initError)="handleInitError($event)"></webcam>
+			<br/>
+		</div>
+		<div class="actionBtn" (click)="triggerSnapshot();" title="Take Picture">📸</div>
+		<div class="actionBtn" (click)="showNextWebcam(true);" title="Switch Camera">🔁</div>
+	</div>
+</div>
+
+<h4 *ngIf="errors.length > 0">Messages:</h4>
+<ul *ngFor="let error of errors">
+	<li>{{error | json}}</li>
+</ul>
+<!--<img src={{img_user}} alt="SIN UMAGEN" style="padding-left: 620px;" >-->
+<h1 *ngIf="letra_user !== null || letra_user !== undefined">{{letra_user}}</h1>
