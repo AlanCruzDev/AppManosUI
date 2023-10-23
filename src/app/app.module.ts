@@ -23,6 +23,9 @@ import { PostCrearComponent } from './componentes/post-crear/post-crear.componen
 import { PerfilCrearComponent } from './componentes/perfil-crear/perfil-crear.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import {WebSocketService} from '../app/services/web-socket.service';
+import { SocketIoConfig, SocketIoModule } from 'ngx-socket-io';
+const config: SocketIoConfig = { url: 'http://127.0.0.1:5000', options: {} };
 
 @NgModule({
   declarations: [
@@ -53,9 +56,10 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the app is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    SocketIoModule.forRoot(config)
   ],
-  providers: [],
+  providers: [WebSocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

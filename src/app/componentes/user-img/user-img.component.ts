@@ -32,7 +32,7 @@ export class UserImgComponent implements OnInit {
    private nextWebcam: Subject<boolean|string> = new Subject<boolean|string>();
 
 
-   constructor() {
+   constructor(public socket:WebSocketService) {
     this.onResize();
 
    }
@@ -64,13 +64,13 @@ export class UserImgComponent implements OnInit {
     this.img_user=webcamImage.imageAsDataUrl;
     console.info('received webcam image', webcamImage.imageAsDataUrl);
     // aqui vamos a llamar al socker
-    /*this.socket.enviarFoto(this.img_user);
+    this.socket.enviarFoto(this.img_user);
      //this.pictureTaken.emit(webcamImage);
     this.socket.getLetraDeciscion().subscribe(res =>{
       if(res !== undefined || res!== null){
         this.letra_user=res;
       }
-     })*/
+     });
    }
 
    public cameraWasSwitched(deviceId: string): void {

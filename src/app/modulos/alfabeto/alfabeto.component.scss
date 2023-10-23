@@ -1,0 +1,14 @@
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.image {
+  text-align: center; /* Centrar la imagen en su contenedor */
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+}
